@@ -14,5 +14,4 @@ public class StudentTestingApplication {
 		StudentTestingService studentTestingService = ctx.getBean(StudentTestingService.class);
 		studentTestingService.runStudentTesting();
 	}
-
 }
