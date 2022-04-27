@@ -17,5 +17,5 @@ public interface StudentTestingService {
 
     void resultCheck(List<QuestionDao> questions, Map<Integer, Boolean> resultOfTesting);
 
-    void runStudentTesting();
+    void runStudentTesting(Pair<String, String> studentData);
 }
