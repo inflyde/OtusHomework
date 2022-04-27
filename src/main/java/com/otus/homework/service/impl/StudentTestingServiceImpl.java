@@ -83,12 +83,11 @@ public class StudentTestingServiceImpl implements StudentTestingService {
     }
 
     @Override
-    public void runStudentTesting() {
+    public void runStudentTesting(Pair<String, String> studentData) {
         final List<String> csvLines = csvReader.readCsvAndGetLines(FILENAME);
         final List<QuestionDao> questions = questionMapper.mapLinesToObjects(csvLines);
         shuffle(questions);
 
-        final Pair<String, String> studentData = greetingsStudent();
         final String studentName = studentData.getFirst();
         final String studentSurname = studentData.getSecond();
         out.println(messageSource.getMessage("message.greetings", new String[] {studentName, studentSurname}, locale));
